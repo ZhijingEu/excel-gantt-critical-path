@@ -1,5 +1,11 @@
 # Excel Gantt Chart with Dependencies and Critical Path
 
+[![Three project team members discussing a house plan, with a connected Gantt schedule behind them](assets/medium-article-hero.png)](https://zhijingeu.medium.com/building-a-spreadsheet-based-gantt-chart-template-with-python-in-excel-aa57b3947c4e)
+
+**[Read the Medium article: Building a Spreadsheet-Based Gantt Chart Template with Python in Excel](https://zhijingeu.medium.com/building-a-spreadsheet-based-gantt-chart-template-with-python-in-excel-aa57b3947c4e)**
+
+*Why I built it, how the scheduling logic works, and how to get started. Illustration generated with OpenAI.*
+
 Edit a familiar spreadsheet and let Python in Excel calculate linked activity dates and finish float. The Gantt uses worksheet formulas and conditional formatting, so you can inspect the schedule without running a separate Python program or enabling VBA.
 
 By Zhijing Eu.
@@ -22,14 +28,9 @@ Download [the desktop-checked v1.3 workbook](CritPath_GanttChart_Template_v1.3.x
 
 You need internet access and a qualifying Microsoft 365 subscription. Python calculations run in Microsoft's cloud. This workbook does not provide offline Python calculation or local-only data processing. If you already use Microsoft 365 services such as OneDrive, assess this feature within your existing organisation's cloud policies.
 
-See Microsoft's [Python in Excel introduction](https://support.microsoft.com/en-us/excel/python/introduction-to-python-in-excel) and [availability information](https://support.microsoft.com/en-gb/excel/python/python-in-excel-availability). Browser co-authoring has not yet been verified for this workbook.
+See Microsoft's [Python in Excel introduction](https://support.microsoft.com/en-us/excel/python/introduction-to-python-in-excel) and [availability information](https://support.microsoft.com/en-gb/excel/python/python-in-excel-availability).
 
 **Standard versus premium compute:** qualifying subscriptions include standard compute plus a limited monthly allowance of faster premium compute. Microsoft says calculations switch to standard speed when that allowance is exhausted, with premium allowance resetting at the start of each month. Premium compute is not required by this template; standard-speed responsiveness has not been benchmarked. The optional Python in Excel add-on provides premium compute and additional calculation modes. Excel shows notifications for premium use, nearing the allowance, and switching to standard speed; Microsoft's linked guidance does not specify a numeric allowance or remaining-usage counter. The local notebook and local tests do not consume Python-in-Excel compute. Check the linked availability page for current plan/platform and preview conditions.
-
-Article and video walkthrough links will be added when published.
-
-
-<!-- After publication, add a linked YouTube thumbnail here. GitHub READMEs do not use an iframe video embed. -->
 
 ## A quick walkthrough
 
@@ -92,13 +93,13 @@ Use at your own risk. This is a lightweight planning aid for small schedules, no
 - Fixed starts affect early scheduling only; float has the limitation described above.
 - Hammocks are anchored spans, not a full hierarchical work-breakdown structure.
 - No resource loading/levelling, schedule risk simulation, or formal DCMA compliance assessment is provided.
-- Browser co-authoring remains untested. Python-in-Excel availability and calculation speed depend on the Microsoft environment.
+- Python-in-Excel availability and calculation speed depend on the Microsoft environment.
 
 For larger or operationally complex schedules, evaluate a professional scheduling tool rather than extending this template indefinitely.
 
 ## What has been checked
 
-Desktop Excel checks cover live duration changes, constraint warnings, negative-duration and cycle errors, recovery, saving/reopening, 50/100-task examples, and input-table sorting. Local automated tests complement those checks. They are not certification of every possible network.
+Desktop Excel checks cover live duration changes, constraint warnings, negative-duration and cycle errors, recovery, saving/reopening, 50/100-task examples, and input-table sorting. The author has also confirmed browser co-authoring works. Local automated tests complement those checks. They are not certification of every possible network.
 
 ## Optional notebook: a local interactive Gantt
 
@@ -189,7 +190,7 @@ The notebook embeds its input readers, scheduling code and chart helpers. It doe
 
 The workbook's **Python Formulas In WorkplanTab** copies match its actual Python cells. The calculation has been checked against saved Excel results and independent dependency examples, including lags, milestones, fixed-date warnings, invalid inputs, cycles and 100-task schedules. A separate clean-folder execution check covers sample, CSV and XLSX notebook input, inline chart output and HTML export. Development helpers and tests are maintained privately and are not required to use this release.
 
-These checks do not certify every possible network or formal schedule-quality compliance. See the scope and limitations above. Browser co-authoring and live hosted Colab/Kaggle execution remain unverified.
+These checks do not certify every possible network or formal schedule-quality compliance. See the scope and limitations above. Live hosted Colab/Kaggle execution remains unverified.
 
 ## Attribution and licence
 
