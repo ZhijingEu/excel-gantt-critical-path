@@ -105,19 +105,7 @@ Desktop Excel checks cover live duration changes, constraint warnings, negative-
 
 [Critical_Path_Gantt_v1.3.ipynb](Critical_Path_Gantt_v1.3.ipynb) is an explanatory document with runnable Python cells. It runs immediately with a built-in sample table, or reads a CSV or the saved XLSX inputs. It contains the same v1.3 scheduling statements, split into sections explaining validation, dependency parsing, forward/backward passes, hammocks and float. It displays an interactive Plotly chart inside the notebook; standalone HTML export is optional and off by default. The built-in sample, supplied CSV and XLSX all contain the same 23-task house plan, including descriptive fields, so their dates, float and critical flags agree. Sample mode remains self-contained and needs no workbook file.
 
-### Run on Colab or Kaggle
-
-Import/upload **just the notebook** into Colab or Kaggle and run all cells with `INPUT_MODE = "sample"`. It contains its own sample and code, so no repository checkout, Excel file, virtual environment setup or GPU is needed. A standard Python CPU runtime is sufficient. Nothing has been published or uploaded to either service from this repository yet.
-
-For your own plan, set `INPUT_MODE = "csv"` and change `CSV_PATH` to the uploaded/attached file's actual path. Colab's Files sidebar exposes uploaded files, typically under `/content`; Kaggle datasets use `/kaggle/input/...`. Leave the output folder relative to the notebook's working directory (normally `/kaggle/working` on Kaggle). Download generated files from the platform's Files/Output sidebar before the session expires.
-
 Start with [sample_schedule.csv](sample_schedule.csv). Required, case-sensitive headers are `TaskID`, `TaskType`, `Duration`, `Predecessors`, `Constraints`, in any order. `TaskTitle` is recommended and defaults to TaskID when absent; other descriptive columns are optional. Blank constraint cells mean no override. Enter at least one date, preferably `YYYY-MM-DD`; durations and lags are elapsed weeks. Keep IDs as text. Predecessor lists containing commas must be quoted as one CSV field. When HTML export is enabled, the notebook also saves its built-in sample as a CSV template.
-
-The published [Colab environment inventory](https://github.com/googlecolab/backend-info/blob/main/pip-freeze.txt) lists NumPy, pandas, Plotly and openpyxl. [Kaggle's Python image](https://github.com/Kaggle/docker-python) supplies a broad preinstalled environment, including Plotly dependencies. [Plotly documents Colab/Kaggle renderer support](https://plotly.com/python/renderers/). These inventories change and are not proof of an actual hosted run. The notebook prints installed versions; sample/CSV modes need NumPy, pandas and Plotly, while only XLSX mode imports openpyxl.
-
-If a hosted runtime lacks a package, install only the missing library in a separate cell, e.g. `%pip install numpy pandas plotly`, then restart/run all. Do not install the repo's Windows/Jupyter lock file into a hosted runtime. Rendering is selected automatically for the notebook platform. Live Colab/Kaggle execution has not yet been verified.
-
-Hosted notebooks process your uploaded data on the provider's servers. Use the local option below for local calculation. The sample is self-contained, but custom inputs and generated outputs still need to be saved/downloaded explicitly.
 
 | Use the XLSX when… | Use the notebook when… |
 | --- | --- |
@@ -190,7 +178,7 @@ The notebook embeds its input readers, scheduling code and chart helpers. It doe
 
 The workbook's **Python Formulas In WorkplanTab** copies match its actual Python cells. The calculation has been checked against saved Excel results and independent dependency examples, including lags, milestones, fixed-date warnings, invalid inputs, cycles and 100-task schedules. A separate clean-folder execution check covers sample, CSV and XLSX notebook input, inline chart output and HTML export. Development helpers and tests are maintained privately and are not required to use this release.
 
-These checks do not certify every possible network or formal schedule-quality compliance. See the scope and limitations above. Live hosted Colab/Kaggle execution remains unverified.
+These checks do not certify every possible network or formal schedule-quality compliance. See the scope and limitations above.
 
 ## Attribution and licence
 
