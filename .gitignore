@@ -1,0 +1,22 @@
+# Local environments, settings and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.jupyter/
+.ipython/
+.tmp/
+outputs/
+~$*
+.DS_Store
+Thumbs.db
+# Private development and publication material
+archive/
+publication/
+docs/
+src/
+tests/
+start_notebook.cmd
+.env
+.env.*
